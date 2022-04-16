@@ -65,6 +65,7 @@ body{
     align-items: center;
     cursor: pointer;
     user-select: none;
+    white-space: nowrap;
 }
 .header__signUpButton:hover{
     text-decoration: underline;
