@@ -1,0 +1,208 @@
+#myVideo{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+body{
+    margin: 0;
+    height: 100vh;
+}
+.header{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.header__logo{
+    margin-left: 10px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex: 5 0 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+.header__menu{
+    flex:1 0 0;
+    font-size: 16px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.header__menu:hover{
+    text-decoration: underline;
+}
+.header__buttonContainer{
+    flex:5 0 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 5%;
+}
+.header__signUpButton{    
+    font-size: 16px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    background-color: blueviolet;
+    height: 30px;
+    width: 70px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.header__signUpButton:hover{
+    text-decoration: underline;
+}
+.button2{
+    font-size: 16px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    background-color: blueviolet;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+.button2:hover{
+    text-decoration: underline;
+}
+.text1{
+    font-size: 30px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+}
+.text2{
+    font-size: 16px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    text-align: center;
+    user-select: none;
+}
+.middle{
+    width: 100%;
+    
+}
+.button2Container{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.middle__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 45px);
+}
+
+#burger__checkbox{
+opacity: 0;
+}
+
+.burger__checkbox {
+    display: none;  /*flex*/
+    flex-direction: column; /* используем flex для центрирования содержимого */
+    align-items: center;
+    justify-content:space-around;  /* центрируем содержимое кнопки */
+    flex: 0 0 28px;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+/* добавляем "гамбургер" */
+.burger__checkbox :nth-child(1),
+.burger__checkbox :nth-child(2),
+.burger__checkbox :nth-child(3){
+  flex: 0 0 2px;
+  width: 100%;
+  height: 2px;
+  background-color:white;
+}
+/*зміна при checked*/
+#burger__checkbox:checked ~ .burger__checkbox :nth-child(2) {
+    transform: rotate(45deg);
+    transition-duration: .25s;
+  }
+  #burger__checkbox:checked ~ .burger__checkbox :nth-child(1) {
+    opacity: 0;
+  }
+  #burger__checkbox:checked ~ .burger__checkbox :nth-child(3) {
+    position: relative;
+    top: -9px;
+    transform: rotate(135deg);
+    transition-duration: .25s;
+  }
+
+button:active{
+    color: white;
+}
+
+@media(max-width: 550px){
+    .burger__checkbox {
+        display: flex;  /*flex*/
+    }
+    .header{
+        flex: 0 0 auto;
+        flex-direction: column;
+    }
+    .header__buttonContainer{
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    .header__menu{
+        display: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #burger__checkbox:checked ~ .header__menu{
+        display: flex;
+    }
+    .middle__container{
+        padding-left: 5%;
+        padding-right: 5%;
+        align-items: flex-start;
+
+    }
+    .middle__container{
+        flex: 1 1 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left:10px;
+        padding-right: 10px;
+        height: auto;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
